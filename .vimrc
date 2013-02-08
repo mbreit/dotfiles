@@ -64,3 +64,6 @@ set textwidth=79
 set formatoptions=rn1
 " set colorcolumn=120
 
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif

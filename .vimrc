@@ -14,6 +14,9 @@ endif
 
 " General vim configuration
 
+syntax on
+filetype plugin indent on
+
 set number      " Show linenumbers
 set nowrap      " Don't wrap lines
 set linebreak   " Wrap lines at convenient points
@@ -24,6 +27,7 @@ set autowrite
 set autoread
 set wildmenu
 set wildmode=list:longest
+set wildignore+=*/tmp/*
 
 set tags=.tags,.gemtags,./.tags,./.gemtags
 
@@ -63,6 +67,19 @@ set wrap
 set textwidth=79
 set formatoptions=rn1
 " set colorcolumn=120
+
+" disable arrow keys
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
+
+" set whitespace characters, use :set list
+set listchars=tab:▸\ ,eol:¬
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

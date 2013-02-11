@@ -36,6 +36,11 @@ namespace :submodules do
   task :init do
     sh "git submodule update --init"
   end
+
+  desc "Update submodules from their repositories"
+  task :update do
+    sh "git submodule foreach 'git pull'"
+  end
 end
 
 desc "Update dotfiles and dependencies"

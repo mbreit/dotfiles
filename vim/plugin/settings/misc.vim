@@ -55,7 +55,7 @@ let g:dbext_default_dict_show_owner=0
 
 let g:yankring_replace_n_pkey = '<C-L>'
 
-let g:ruby_debugger_create_default_mappings = 0
+let g:ruby_debugger_no_maps = 1
 
 let g:vroom_use_vimux = 1
 

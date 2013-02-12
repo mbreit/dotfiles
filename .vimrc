@@ -17,6 +17,8 @@ endif
 syntax on
 filetype plugin indent on
 
+let mapleader = "," " Set leader key to , instead to <Esc>
+
 set number      " Show linenumbers
 set nowrap      " Don't wrap lines
 set linebreak   " Wrap lines at convenient points

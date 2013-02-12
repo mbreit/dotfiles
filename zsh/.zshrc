@@ -2,7 +2,7 @@
 DOTFILES_PATH=$HOME/.local/dotfiles
 
 # Path to your oh-my-zsh configuration.
-ZSH=$DOTFILES_PATH/oh-my-zsh
+ZSH=$DOTFILES_PATH/zsh/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -38,10 +38,19 @@ unsetopt correct_all
 # Load zmv
 autoload zmv
 
+# Shortcut function to run rake tasks in the dotfiles directory
+function dotfiles {
+  cd $DOTFILES_PATH
+  rake $@
+  cd -
+}
+
+
 # Local additions that should not be checked into the dotfiles repository
 [[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
 # Set some aliases
+alias df='dotfiles'
 alias gs='git st'
 alias gst='git st'
 alias gco='git co'

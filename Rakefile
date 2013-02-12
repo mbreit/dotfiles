@@ -39,13 +39,18 @@ namespace :submodules do
 
   desc "Update submodules from their repositories"
   task :update do
-    sh "git submodule foreach 'git pull'"
+    sh "git submodule foreach 'git checkout $(git config --file $toplevel/.gitmodules submodule.$name.branch) && git pull'"
   end
 end
 
 desc "Update dotfiles and dependencies"
-task :update do
-  sh "git pull --rebase"
+task :update => [:'update:repository', :'submodules:update']
+
+namespace :update do
+  desc "Update dotfiles git repository"
+  task :repository do
+    sh "git pull --rebase"
+  end
 end
 
 def link_file(filename, dir, target_name = nil)

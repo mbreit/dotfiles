@@ -233,3 +233,8 @@
 	url = https://github.com/honza/snipmate-snippets.git
         branch = master
         ignore = untracked
+[submodule "vim/bundle/vim-sensible"]
+	path = vim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+        branch = master
+        ignore = untracked

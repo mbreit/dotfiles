@@ -40,15 +40,6 @@ nmap <leader>dd <plug>ruby_debugger_remove_breakpoints
 nmap <leader>rs :silent Rserver!<CR>:redraw!<CR>
 nmap <leader>rd :Rdebugger 'script/rails s'<CR>
 nmap <leader>p :Pry<CR>
-imap <expr><C-x><C-x> neocomplcache#start_manual_complete()
 
 " Setup mapping for switch.vim
 nnoremap - :Switch<cr>
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"" " " "

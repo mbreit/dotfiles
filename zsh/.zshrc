@@ -50,7 +50,6 @@ function dotfiles {
 [[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
 # Set some aliases
-alias df='dotfiles'
 alias gs='git st'
 alias gst='git st'
 alias gco='git co'

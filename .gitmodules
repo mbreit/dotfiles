@@ -228,3 +228,8 @@
 	url = https://github.com/groenewege/vim-less.git
         branch = master
         ignore = untracked
+[submodule "vim/bundle/snipmate-snippets"]
+	path = vim/bundle/snipmate-snippets
+	url = https://github.com/honza/snipmate-snippets.git
+        branch = master
+        ignore = untracked

@@ -101,3 +101,6 @@ augroup neocomplcache
   autocmd FileType ruby let g:rubycomplete_rails = 1
   autocmd FileType ruby let g:rubycomplete_classes_in_global =1
 augroup end
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'

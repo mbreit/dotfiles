@@ -82,6 +82,8 @@ compdef _git-flow feature=git-flow-feature
 
 alias vim='vim --servername VIM'
 
+alias t='tmux attach -t $PWD:t || tmux new -s $PWD:t'
+
 
 # Ruby/Rails settings
 

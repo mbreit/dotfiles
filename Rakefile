@@ -13,17 +13,18 @@ namespace "install" do
 
   desc "Install vim configuration"
   task :vim do
-    link_to_home ".", ".vimrc", ".vim"
+    link_to_home "vim", ".vimrc"
+    link_file("vim", ENV["HOME"], ".vim")
   end
 
   desc "Install zsh configuration"
   task :zsh do
-    link_to_home ".", ".zshrc"
+    link_to_home "zsh", ".zshrc"
   end
 
   desc "Install tmux configuration"
   task :tmux do
-    link_to_home ".", ".tmux.conf"
+    link_to_home "tmux", ".tmux.conf"
   end
 
   desc "Install powerline fonts"
@@ -56,11 +57,15 @@ end
 def link_file(filename, dir, target_name = nil)
   target = File.join(dir, (target_name || File.basename(filename)))
   source = File.join(ENV['PWD'], filename)
+  backup(target)
+  FileUtils.ln_s(source, target)
+end
+
+def backup(target)
   if File.exist?(target)
     puts "File #{target} already exists, creating backup..."
     FileUtils.move(target, target + ".backup-#{Time.now.strftime("%F-%H%M%S")}")
   end
-  FileUtils.ln_s(source, target)
 end
 
 def link_to_home(dir, *files)

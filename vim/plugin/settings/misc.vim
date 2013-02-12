@@ -3,12 +3,10 @@ set switchbuf=usetab
 " Set default whitespace
 set ts=8 sts=2 sw=2 expandtab
 
-" Setup vim.ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 " Fix fugitive syntax highlighting by unsetting locale
 let g:fugitive_git_executable = 'LC_ALL=C git'
 
-let NERDTreeIgnore=['\.vim$', '\~$', '\.aux$']
+let NERDTreeIgnore=['\~$', '\.aux$']
 
 let g:AutoClosePairs = {'"': '"', '[': ']', '''': '''', '(': ')', '{': '}'}
 
@@ -37,21 +35,9 @@ augroup default
   " Fold coffeescript by indent and intent with 2 spaces
   autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
   autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-
-  " highlight trailing whitespace
-  " highlight ExtraWhitespace ctermbg=red guibg=red
-  " match ExtraWhitespace /\s\+$/
-  " autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-  " autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-  " autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-  " autocmd BufWinLeave * call clearmatches()
-
-  " autocmd BufWinEnter * DBSetOption dict_show_owner=0
 augroup end
 
 let g:dbext_default_dict_show_owner=0
-
-" let g:syntastic_auto_loc_list=1
 
 let g:yankring_replace_n_pkey = '<C-L>'
 

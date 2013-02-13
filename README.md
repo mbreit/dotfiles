@@ -1,6 +1,6 @@
-# Personal dotfiles of Moritz Breit
+# My personal dotfiles
 
-These are my personal dotfiles. Use at your own risk.
+These are my personal dotfiles. Use them at your own risk.
 They contain configuration for zsh, vim and tmux.
 If you have any questions, contact me.
 

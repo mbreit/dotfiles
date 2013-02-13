@@ -62,9 +62,9 @@ def link_file(filename, dir, target_name = nil)
 end
 
 def backup(target)
-  if File.exist?(target)
+  if File.exist?(target) || File.symlink?(target)
     puts "File #{target} already exists, creating backup..."
-    FileUtils.move(target, target + ".backup-#{Time.now.strftime("%F-%H%M%S")}")
+    File.rename(target, target + ".backup-#{Time.now.strftime("%F-%H%M%S")}")
   end
 end
 

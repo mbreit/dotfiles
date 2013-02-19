@@ -45,12 +45,12 @@ namespace :submodules do
 end
 
 desc "Update dotfiles and dependencies"
-task :update => [:'update:repository', :'submodules:update']
+task :update => [:'update:repository', :'submodules:init', :'submodules:update']
 
 namespace :update do
   desc "Update dotfiles git repository"
   task :repository do
-    sh "git pull --rebase"
+    sh "git stash && git pull --rebase && git stash pop"
   end
 end
 

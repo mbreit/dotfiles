@@ -16,7 +16,7 @@ let g:AutoClosePairs = {'"': '"', '[': ']', '''': '''', '(': ')', '{': '}'}
 let g:surround_113 = "#{\r}"   " v
 let g:surround_35  = "#{\r}"   " #
 
-let g:markdown_fenced_languages = ['ruby', 'erb=eruby', 'html', 'haml', 'css', 'sass', 'scss', 'javascript']
+let g:markdown_fenced_languages = ['ruby', 'erb=eruby', 'html', 'haml', 'css', 'sass', 'scss', 'javascript', 'bash']
 
 augroup default
   " Delete all autocmds in this group

@@ -6,6 +6,9 @@ set ts=8 sts=2 sw=2 expandtab
 " Fix fugitive syntax highlighting by unsetting locale
 let g:fugitive_git_executable = 'LC_ALL=C git'
 
+" Customize NERDTree plugin
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 let NERDTreeIgnore=['\~$', '\.aux$']
 
 let g:AutoClosePairs = {'"': '"', '[': ']', '''': '''', '(': ')', '{': '}'}

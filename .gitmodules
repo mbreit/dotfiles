@@ -248,3 +248,8 @@
 	url = https://github.com/tpope/vim-sleuth.git
         branch = master
         ignore = untracked
+[submodule "vim/bundle/vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+	branch = master
+	ignore = untracked

@@ -33,6 +33,8 @@ augroup default
   " Fold coffeescript by indent and intent with 2 spaces
   autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
   autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
+  autocmd BufNewFile,BufReadPost *.tex setl makeprg=pdflatex\ %
 augroup end
 
 let g:dbext_default_dict_show_owner=0

@@ -15,5 +15,6 @@ command! -nargs=* Vbundle Vrun bundle <args>
 command! -nargs=* Task execute '!task <f-args>'
 command! TasksOpen execute 'silent !task > /tmp/tasks' | redraw! | pedit /tmp/tasks
 command! Mailcatcher execute '!mailcatcher ; gnome-open http://localhost:1080'
+command! Freload execute 'silent !echo reload | nc localhost 32000' | redraw!
 
 command! -nargs=+ -complete=customlist,dbext#DB_completeTables Describe :DBDescribeTable '<args>'

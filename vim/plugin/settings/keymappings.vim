@@ -28,6 +28,7 @@ nmap <leader>n :set number!<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nmap <Leader>m :make<CR>
 inoremap <C-v> <ESC>:VimuxRunLastCommand<CR>
+nmap <leader>f :w\|Freload<CR>
 
 " Setup mappings for ruby-debugger.
 nmap <leader>db <plug>ruby_debugger_breakpoint

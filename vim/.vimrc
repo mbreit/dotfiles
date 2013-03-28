@@ -17,7 +17,7 @@ if filereadable(expand("~/.vim/bundle/vim-pathogen/autoload/pathogen.vim")) && !
 endif
 
 " General vim configuration
-let mapleader = "," " Set leader key to , instead to <Esc>
+let mapleader = "," " Set leader key to , instead of \
 
 set number      " Show linenumbers
 set linebreak   " Wrap lines at convenient points

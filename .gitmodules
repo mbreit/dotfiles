@@ -253,3 +253,8 @@
 	url = https://github.com/airblade/vim-gitgutter.git
 	branch = master
 	ignore = untracked
+[submodule "vim/bundle/vim-dispatch"]
+	path = vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+	branch = master
+	ignore = untracked

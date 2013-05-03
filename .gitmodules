@@ -258,3 +258,8 @@
 	url = https://github.com/tpope/vim-dispatch.git
 	branch = master
 	ignore = untracked
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = https://github.com/Lokaltog/powerline.git
+	branch = develop
+	ignore = untracked

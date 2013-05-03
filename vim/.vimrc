@@ -51,6 +51,8 @@ set formatoptions=rn1
 " imap <left> <nop>
 " imap <right> <nop>
 
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif

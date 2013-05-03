@@ -115,5 +115,5 @@ EDITOR=vim
 
 # Load powerline prompt if it is installed to
 # ~/.local/lib/python2.7/site-packages
-POWERLINE_PATH=$HOME/.local/lib/python2.7/site-packages/powerline
+POWERLINE_PATH=$DOTFILES_PATH/vim/bundle/powerline/powerline
 [[ -s $POWERLINE_PATH/bindings/zsh/powerline.zsh ]] && source $POWERLINE_PATH/bindings/zsh/powerline.zsh

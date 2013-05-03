@@ -27,7 +27,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(debian history-substring-search gem git rvm bundler rails3 rake capistrano vagrant git-flow psql zsh-syntax-highlighting)
+plugins=(debian history-substring-search gem git rvm bundler rails3 rake capistrano vagrant git-flow psql zsh-syntax-highlighting tmux)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh

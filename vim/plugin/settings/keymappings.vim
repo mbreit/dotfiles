@@ -19,7 +19,7 @@ nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 
 " Easy tag navigation with <CR> and <BS>
-nmap <CR> <C-]>
+"nmap <CR> <C-]>
 nmap <BS> <C-T>
 
 " Map personal hotkeys

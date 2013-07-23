@@ -84,6 +84,7 @@ alias vim='vim --servername VIM'
 
 alias t='tmux attach -t $PWD:t || tmux new -s $PWD:t'
 
+alias o='gnome-open'
 
 # Ruby/Rails settings
 

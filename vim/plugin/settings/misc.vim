@@ -1,5 +1,8 @@
 set switchbuf=usetab
 
+set nobackup
+set noswapfile
+
 " Set default whitespace
 set ts=8 sts=2 sw=2 expandtab
 

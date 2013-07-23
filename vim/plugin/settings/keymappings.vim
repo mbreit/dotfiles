@@ -48,3 +48,13 @@ nmap <leader>p :Pry<CR>
 
 " Setup mapping for switch.vim
 nnoremap - :Switch<cr>
+
+" Setup mapping for xmpfilter from rcodetools
+autocmd FileType ruby nmap <buffer> <leader>xa <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <leader>xa <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <leader>xa <Plug>(xmpfilter-run)
+
+autocmd FileType ruby nmap <buffer> <leader>xm <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <leader>xm <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <leader>xm <Plug>(xmpfilter-mark)
+autocmd FileType ruby nmap <buffer> <leader>xx ,xm,xa<CR>

@@ -268,3 +268,8 @@
 	url = https://github.com/w0ng/vim-hybrid.git
 	branch = master
 	ignore = untracked
+[submodule "vim/bundle/vim-ruby-xmpfilter"]
+	path = vim/bundle/vim-ruby-xmpfilter
+	url = https://github.com/t9md/vim-ruby-xmpfilter.git
+	branch = master
+	ignore = untracked

@@ -273,3 +273,8 @@
 	url = https://github.com/t9md/vim-ruby-xmpfilter.git
 	branch = master
 	ignore = untracked
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+	branch = master
+	ignore = untracked

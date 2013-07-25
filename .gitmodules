@@ -213,11 +213,6 @@
 	url = https://github.com/vim-scripts/YankRing.vim.git
         branch = master
         ignore = untracked
-[submodule "vim/bundle/vim-powerline"]
-	path = vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-        branch = develop
-        ignore = untracked
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
@@ -257,11 +252,6 @@
 	path = vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
 	branch = master
-	ignore = untracked
-[submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
-	url = https://github.com/Lokaltog/powerline.git
-	branch = develop
 	ignore = untracked
 [submodule "vim/bundle/vim-hybrid"]
 	path = vim/bundle/vim-hybrid

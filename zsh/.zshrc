@@ -113,9 +113,3 @@ EDITOR=vim
 
 # Set TERM to use 256 colors if set to xterm
 [[ "x$TERM" == "xxterm" ]] && TERM="xterm-256color"
-
-# Load powerline prompt if it is installed to
-# ~/.local/lib/python2.7/site-packages
-POWERLINE_PATH=$DOTFILES_PATH/vim/bundle/powerline/powerline
-PATH=$POWERLINE_PATH/../scripts:$PATH
-[[ -s $POWERLINE_PATH/bindings/zsh/powerline.zsh ]] && source $POWERLINE_PATH/bindings/zsh/powerline.zsh

@@ -268,3 +268,8 @@
 	url = https://github.com/bling/vim-airline.git
 	branch = master
 	ignore = untracked
+[submodule "vim/bundle/vim-rspec"]
+	path = vim/bundle/vim-rspec
+	url = https://github.com/skwp/vim-rspec.git
+	branch = mster
+	ignore = untracked

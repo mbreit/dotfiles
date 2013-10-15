@@ -14,3 +14,10 @@ command! Mailcatcher execute '!mailcatcher ; gnome-open http://localhost:1080'
 command! Freload execute 'silent !echo reload | nc localhost 32000' | redraw!
 
 command! -nargs=+ -complete=customlist,dbext#DB_completeTables Describe :DBDescribeTable '<args>'
+
+command! -nargs=* Vagrant Dispatch vagrant <args>
+command! Vup Vagrant up
+command! Vdestroy Vagrant destroy
+command! Vprovision Vagrant provision
+command! Vsuspend Vagrant suspend
+command! -nargs=* Vssh Vagrant ssh <args>

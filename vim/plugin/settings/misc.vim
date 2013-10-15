@@ -48,6 +48,8 @@ let g:ruby_debugger_no_maps = 1
 
 let g:vroom_use_vimux = 1
 
+let g:rspec_command = "Dispatch rspec -f documentation {spec}"
+
 " Load manpage support
 runtime! ftplugin/man.vim
 

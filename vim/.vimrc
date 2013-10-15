@@ -23,6 +23,7 @@ set number      " Show linenumbers
 set linebreak   " Wrap lines at convenient points
 
 set hlsearch    " highlight search results
+set list
 set wildmode=list:longest
 set wildignore+=*/tmp/*
 

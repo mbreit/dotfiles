@@ -46,6 +46,12 @@ nmap <leader>rs :silent Rserver!<CR>:redraw!<CR>
 nmap <leader>rd :Rdebugger 'script/rails s'<CR>
 nmap <leader>p :Pry<CR>
 
+" Rspec.vim mappings
+map <Leader>sf :call RunCurrentSpecFile()<CR>
+map <Leader>ss :call RunNearestSpec()<CR>
+map <Leader>sl :call RunLastSpec()<CR>
+map <Leader>sa :call RunAllSpecs()<CR>
+
 " Setup mapping for switch.vim
 nnoremap - :Switch<cr>
 

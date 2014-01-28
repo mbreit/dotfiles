@@ -38,11 +38,6 @@
 	url = https://github.com/vim-scripts/matchit.zip.git
         branch = master
         ignore = untracked
-[submodule "vim/bundle/neocomplcache"]
-	path = vim/bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.git
-        branch = master
-        ignore = untracked
 [submodule "vim/bundle/neosnippet"]
 	path = vim/bundle/neosnippet
 	url = https://github.com/Shougo/neosnippet.git
@@ -271,5 +266,10 @@
 [submodule "vim/bundle/vim-rspec"]
 	path = vim/bundle/vim-rspec
 	url = https://github.com/thoughtbot/vim-rspec.git
-	branch = mster
+	branch = master
+	ignore = untracked
+[submodule "vim/bundle/neocomplete.vim"]
+	path = vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim.git
+	branch = master
 	ignore = untracked

@@ -16,6 +16,12 @@ if filereadable(expand("~/.vim/bundle/vim-pathogen/autoload/pathogen.vim")) && !
   call pathogen#helptags()
 endif
 
+" Load sensible.vim early to allow overriding settings
+runtime! plugin/sensible.vim
+
+syntax on
+filetype plugin indent on
+
 " General vim configuration
 let mapleader = "," " Set leader key to , instead of \
 

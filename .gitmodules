@@ -273,3 +273,8 @@
 	url = https://github.com/Shougo/neocomplete.vim.git
 	branch = master
 	ignore = untracked
+[submodule "vim/bundle/github-issues.vim"]
+	path = vim/bundle/github-issues.vim
+	url = https://github.com/jaxbot/github-issues.vim.git
+	branch = master
+	ignore = untracked

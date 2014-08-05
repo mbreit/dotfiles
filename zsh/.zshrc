@@ -95,23 +95,23 @@ alias o='gnome-open'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && [[ $USER != "root" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Add rvm executables to the path
-PATH=$PATH:$HOME/.rvm/bin
+export PATH=$PATH:$HOME/.rvm/bin
 
 # Tweak ruby garbage collector for faster rails startup
-RUBY_FREE_MIN=200000
-RUBY_GC_MALLOC_LIMIT=60000000
+export RUBY_FREE_MIN=200000
+export RUBY_GC_MALLOC_LIMIT=60000000
 
 
 # Misc settings
 
 # Add ~/.local/bin to the path (e.g. for python packages)
-PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # Load tmuxinator if installed
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator ]]
 
 # Set default editor to vim
-EDITOR=vim
+export EDITOR=vim
 
 # Set TERM to use 256 colors if set to xterm
-[[ "x$TERM" == "xxterm" ]] && TERM="xterm-256color"
+[[ "x$TERM" == "xxterm" ]] && export TERM="xterm-256color"

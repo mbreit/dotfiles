@@ -125,7 +125,7 @@
         ignore = untracked
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
-	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
+	url = git://git.code.sf.net/p/vim-latex/vim-latex
         branch = master
         ignore = untracked
 [submodule "vim/bundle/vim-markdown"]

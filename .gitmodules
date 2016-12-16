@@ -208,11 +208,6 @@
 	url = https://github.com/vim-scripts/YankRing.vim.git
         branch = master
         ignore = untracked
-[submodule "zsh/oh-my-zsh"]
-	path = zsh/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-        branch = master
-        ignore = untracked
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
@@ -281,9 +276,20 @@
 [submodule "vim/bundle/vim-rubocop"]
 	path = vim/bundle/vim-rubocop
 	url = https://github.com/ngmy/vim-rubocop.git
+	branch = master
+	ignore = untracked
 [submodule "vim/bundle/vim-ember-script"]
 	path = vim/bundle/vim-ember-script
 	url = https://github.com/heartsentwined/vim-ember-script.git
+	branch = master
+	ignore = untracked
 [submodule "vim/bundle/vim-emblem"]
 	path = vim/bundle/vim-emblem
 	url = https://github.com/heartsentwined/vim-emblem.git
+	branch = master
+	ignore = untracked
+[submodule "zsh/zgen"]
+	path = zsh/zgen
+	url = https://github.com/tarjoilija/zgen.git
+	branch = master
+	ignore = untracked

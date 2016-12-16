@@ -1,17 +1,6 @@
 # Path to your dotfiles
 DOTFILES_PATH=$HOME/.local/dotfiles
 
-# Path to your oh-my-zsh configuration.
-ZSH=$DOTFILES_PATH/zsh/oh-my-zsh
-
-ZSH_CUSTOM=$DOTFILES_PATH/zsh/custom
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="mbreit"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -27,15 +16,54 @@ ZSH_THEME="mbreit"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(debian history-substring-search gem git rvm bundler rails rake capistrano vagrant git-flow psql zsh-syntax-highlighting tmux)
+source $DOTFILES_PATH/zsh/zgen/zgen.zsh
 
-# Load oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+if ! zgen saved; then
+    zgen oh-my-zsh
+
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/bundler
+    zgen oh-my-zsh plugins/rake-fast
+    zgen oh-my-zsh plugins/rvm
+    zgen oh-my-zsh plugins/kubectl
+    zgen oh-my-zsh plugins/systemd
+    zgen oh-my-zsh plugins/emacs
+    zgen oh-my-zsh plugins/tmux
+    zgen oh-my-zsh plugins/z
+
+    zgen load djui/alias-tips
+    zgen load andrewferrier/fzf-z
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-completions src
+    zgen load zsh-users/zsh-history-substring-search
+    zgen load zsh-users/zsh-autosuggestions
+
+    zgen load denysdovhan/spaceship-zsh-theme
+
+    # save all to init script
+    zgen save
+fi
+
+# Customize to your needs...
+
+# Load and init fzf
+FZF_PATH=/usr/share/fzf
+[[ -s $FZF_PATH/completion.zsh ]] && source $FZF_PATH/completion.zsh
+[[ -s $FZF_PATH/key-bindings.zsh ]] && source $FZF_PATH/key-bindings.zsh
+
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+
+# Set default editor to vim
+# export EDITOR="emacsclient -nw"
+# export ALTERNATE_EDITOR="emacs -nw"
+export VISUAL="$EDITOR"
+export TMPDIR=/tmp
 
 # Disable zsh spelling correction
-unsetopt correct_all
+# unsetopt correct_all
 
 # Load zmv
 autoload zmv
@@ -82,24 +110,15 @@ alias up='cd `git rev-parse --show-toplevel` && git-up'
 alias feature='git flow feature'
 compdef _git-flow feature=git-flow-feature
 
-alias vim='vim --servername VIM'
+#alias vim='vim --servername VIM'
 
 alias t='tmux attach -t $PWD:t || tmux new -s $PWD:t'
 
 alias o='gnome-open'
 
+alias p='cd `git rev-parse --show-toplevel`'
+
 # Ruby/Rails settings
-
-# Load rvm if it is installed to ~/.rvm and the current user is not root (to
-# avoid warning when using sudo)
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && [[ $USER != "root" ]] && . "$HOME/.rvm/scripts/rvm"
-
-# Add rvm executables to the path
-export PATH=$PATH:$HOME/.rvm/bin
-
-# Tweak ruby garbage collector for faster rails startup
-export RUBY_GC_MALLOC_LIMIT=60000000
-
 
 # Misc settings
 
@@ -107,10 +126,7 @@ export RUBY_GC_MALLOC_LIMIT=60000000
 export PATH=$PATH:$HOME/.local/bin
 
 # Load tmuxinator if installed
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator ]]
-
-# Set default editor to vim
-export EDITOR=vim
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Set TERM to use 256 colors if set to xterm
 [[ "x$TERM" == "xxterm" ]] && export TERM="xterm-256color"

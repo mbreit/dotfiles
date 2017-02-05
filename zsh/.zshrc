@@ -5,7 +5,7 @@ DOTFILES_PATH=$HOME/.local/dotfiles
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -14,7 +14,7 @@ DOTFILES_PATH=$HOME/.local/dotfiles
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 source $DOTFILES_PATH/zsh/zgen/zgen.zsh
 
@@ -22,22 +22,23 @@ if ! zgen saved; then
     zgen oh-my-zsh
 
     zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/bundler
+    zgen oh-my-zsh plugins/ruby
     zgen oh-my-zsh plugins/rake-fast
     zgen oh-my-zsh plugins/rvm
+    zgen oh-my-zsh plugins/bundler
     zgen oh-my-zsh plugins/kubectl
     zgen oh-my-zsh plugins/systemd
     zgen oh-my-zsh plugins/emacs
     zgen oh-my-zsh plugins/tmux
-    zgen oh-my-zsh plugins/z
 
     zgen load djui/alias-tips
-    zgen load andrewferrier/fzf-z
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-completions src
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
+    zgen load littleq0903/gcloud-zsh-completion src
 
+    # zgen load robbl/spaceship-zsh-theme
     zgen load denysdovhan/spaceship-zsh-theme
 
     # save all to init script
@@ -45,11 +46,6 @@ if ! zgen saved; then
 fi
 
 # Customize to your needs...
-
-# Load and init fzf
-FZF_PATH=/usr/share/fzf
-[[ -s $FZF_PATH/completion.zsh ]] && source $FZF_PATH/completion.zsh
-[[ -s $FZF_PATH/key-bindings.zsh ]] && source $FZF_PATH/key-bindings.zsh
 
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -118,6 +114,11 @@ alias o='gnome-open'
 
 alias p='cd `git rev-parse --show-toplevel`'
 
+
+alias y='yaourt'
+alias yu='yaourt -Syu'
+alias yua='yaourt -Syua'
+
 # Ruby/Rails settings
 
 # Misc settings
@@ -126,7 +127,13 @@ alias p='cd `git rev-parse --show-toplevel`'
 export PATH=$PATH:$HOME/.local/bin
 
 # Load tmuxinator if installed
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+# [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Set TERM to use 256 colors if set to xterm
 [[ "x$TERM" == "xxterm" ]] && export TERM="xterm-256color"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+source <(kubectl completion zsh)

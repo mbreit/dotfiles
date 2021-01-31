@@ -1,3 +1,6 @@
 /vim/backups
 /vim/spell
 /vim/.netrwhist
+
+/fish/functions/fundle.fish
+/fish/fundle

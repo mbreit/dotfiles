@@ -5,7 +5,7 @@ DOTFILES_PATH=$HOME/.local/dotfiles
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -30,15 +30,15 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/systemd
     zgen oh-my-zsh plugins/emacs
     zgen oh-my-zsh plugins/tmux
+    zgen oh-my-zsh plugins/autojump
 
-    zgen load djui/alias-tips
+    # zgen load djui/alias-tips
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-completions src
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
-    zgen load littleq0903/gcloud-zsh-completion src
+    # zgen load littleq0903/gcloud-zsh-completion src
 
-    # zgen load robbl/spaceship-zsh-theme
     zgen load denysdovhan/spaceship-zsh-theme
 
     # save all to init script
@@ -47,7 +47,7 @@ fi
 
 # Customize to your needs...
 
-zmodload zsh/terminfo
+# zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
@@ -110,6 +110,11 @@ compdef _git-flow feature=git-flow-feature
 
 alias t='tmux attach -t $PWD:t || tmux new -s $PWD:t'
 
+function tj() {
+  j "$1"
+  tmux attach -t $PWD:t || tmux new -s $PWD:t
+}
+
 alias o='gnome-open'
 
 alias p='cd `git rev-parse --show-toplevel`'
@@ -119,12 +124,28 @@ alias y='yaourt'
 alias yu='yaourt -Syu'
 alias yua='yaourt -Syua'
 
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcb='docker-compose build'
+alias dcr='docker-compose run --rm'
+alias dcrr='docker-compose run --rm rails'
+alias dcrc='docker-compose run --rm rails rails c'
+alias dcrm='docker-compose run --rm rails rake db:migrate'
+
+alias k='kubectl'
+alias ka='kubectl --all-namespaces=true'
+alias kag='kubectl --all-namespaces=true get'
+alias kg='kubectl get'
+alias kd='kubectl describe'
+alias kgn='kubectl get --namespace'
+alias kdn='kubectl describe --namespace'
+
 # Ruby/Rails settings
 
 # Misc settings
 
 # Add ~/.local/bin to the path (e.g. for python packages)
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/prg/flutter/bin:$HOME/.krew/bin
 
 # Load tmuxinator if installed
 # [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
@@ -132,8 +153,21 @@ export PATH=$PATH:$HOME/.local/bin
 # Set TERM to use 256 colors if set to xterm
 [[ "x$TERM" == "xxterm" ]] && export TERM="xterm-256color"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.asdf/asdf.sh" ]] && . "$HOME/.asdf/asdf.sh"
 
 source <(kubectl completion zsh)
+
+export SPACESHIP_KUBECTL_SYMBOL="☸️  "
+export SPACESHIP_KUBECTL_SHOW=true
+export SPACESHIP_BATTERY_SHOW=false
+export SPACESHIP_ELIXIR_SHOW=false
+export SPACESHIP_NODE_SHOW=true
+export SPACESHIP_PACKAGE_SHOW=false
+export SPACESHIP_DOCKER_SHOW=false
+
+if [[ "x$INSIDE_EMACS" == "xvterm" ]] ; then
+    export SPACESHIP_RUBY_SYMBOL="r "
+    export SPACESHIP_NODE_SYMBOL="n "
+    export SPACESHIP_DOCKER_SYMBOL="d "
+    export SPACESHIP_KUBECONTEXT_SYMBOL="k "
+fi

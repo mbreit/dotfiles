@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 desc 'Install dotfiles to your home directory'
-task install: %w[submodules:init install:vim install:zsh install:tmux install:fish]
+task install: %w[submodules:init install:vim install:zsh install:tmux install:fish install:git]
 
 namespace 'install' do
   desc 'Install vim configuration'
@@ -23,6 +23,11 @@ namespace 'install' do
   desc 'Install fish configuration'
   task :fish do
     link_file 'fish', to: '.config'
+  end
+
+  desc 'Install git configuration'
+  task :git do
+    link_file 'git', to: '.config'
   end
 end
 

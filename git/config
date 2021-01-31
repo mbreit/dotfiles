@@ -1,0 +1,45 @@
+[user]
+	email = mail@moritz-breit.de
+	name = Moritz Breit
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+[alias]
+	st = status -s -b
+	s = status -s -b
+	co = checkout
+	cob = checkout -b
+	cot = checkout -t
+	c = commit
+	cl = clone
+	ci = commit
+	ff = merge --ff-only
+	nff = merge --no-ff
+	tm = branch -a --no-merged
+	signoff = commit -s --amend
+	p = push origin HEAD
+	po = push origin
+	pom = push origin master
+	l = log --graph --pretty=format:'%C(yellow)%h%Cred%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --date-order
+	la = log --graph --all --pretty=format:'%C(yellow)%h%Cred%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --date-order
+	ll = log --graph --decorate --stat --date-order
+	lla = log --graph --decorate --stat --all --date-order
+	lm = log --graph --pretty=format:'%C(yellow)%h%Cred%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --date-order ^HEAD
+	llm = log --graph --decorate --stat --date-order ^HEAD
+	d = diff
+	ds = diff --staged
+	ignore = update-index --assume-unchanged
+	unignore = update-index --assume-changed
+	lost = !"git fsck --lost-found | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+	rmrm = !"git status --porcelain | grep \"^ D \" | cut -b 3- | xargs git rm"
+[diff]
+	tool = vimdiff
+[gui]
+	spellingdictionary = en
+	fontui = -family ubuntu -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"ubuntu mono\" -size -12 -weight normal -slant roman -underline 0 -overstrike 0
+[push]
+	default = current

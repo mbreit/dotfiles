@@ -11,3 +11,6 @@ fundle plugin 'laughedelic/pisces'
 fundle plugin 'oh-my-fish/plugin-bang-bang'
 
 fundle init
+
+set -g fish_greeting ""
+set -g EDITOR vim

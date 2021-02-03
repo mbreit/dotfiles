@@ -37,7 +37,9 @@ set tags=.tags,.gemtags,./.tags,./.gemtags
 
 " Enable mouse
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 set smartindent
 set encoding=utf-8

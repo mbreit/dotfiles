@@ -8,6 +8,7 @@ namespace 'install' do
   task :vim do
     link_file '.vimrc', from: 'vim'
     link_file 'vim', as: '.vim'
+    link_file 'nvim', to: '.config'
   end
 
   desc 'Install zsh configuration'

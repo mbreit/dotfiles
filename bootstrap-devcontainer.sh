@@ -13,6 +13,3 @@ sudo apt-get install -y --no-install-recommends procps htop openssh-client less 
 
 # Install dotfiles
 rake install
-
-# Initialize fundle for fish plugins
-fish -i -c "source fish/conf.d/plugins.fish && fundle install"

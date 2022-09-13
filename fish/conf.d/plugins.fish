@@ -3,7 +3,7 @@ if status --is-interactive
         eval (curl -sfL https://git.io/fundle-install)
     end
 
-    fundle plugin 'mbreit/spacefish' --url 'git@github.com:mbreit/spacefish.git#patch-1'
+    fundle plugin 'mbreit/spacefish' --url 'https://github.com/mbreit/spacefish.git#patch-1'
     fundle plugin 'evanlucas/fish-kubectl-completions'
     fundle plugin 'brgmnn/fish-docker-compose'
     fundle plugin 'jethrokuan/z'

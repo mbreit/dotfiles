@@ -11,5 +11,7 @@ sudo chown -R $(id -u):$(id -g) ~/.local ~/.config
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish neovim rake
 
+echo /usr/bin/fish >> /etc/shells
+
 # Install dotfiles
 rake install

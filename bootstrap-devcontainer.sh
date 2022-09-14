@@ -9,11 +9,12 @@ sudo chown -R $(id -u):$(id -g) ~/.local ~/.config
 
 # Install debian packages
 sudo apt-get update
-sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish neovim rake
+sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish
 
-echo /usr/bin/fish >> /etc/shells
+sudo sh -c "echo /usr/bin/fish >> /etc/shells"
 
 # Install dotfiles
-rake install:fish
+mkdir -p ~/.config
+ln -sTf $(pwd)/fish ~/.config/fish
 
-fish -ic "fundle install"
+# fish -ic "fundle install"

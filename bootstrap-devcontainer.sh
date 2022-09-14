@@ -14,4 +14,6 @@ sudo apt-get install -y --no-install-recommends procps htop openssh-client less 
 echo /usr/bin/fish >> /etc/shells
 
 # Install dotfiles
-rake install
+rake install:fish
+
+fish -ic "fundle install"

@@ -2,6 +2,8 @@
 /vim/spell
 /vim/.netrwhist
 
+/nvim/plugin/packer_compiled.lua
+
 /fish/functions/fundle.fish
 /fish/fundle
 fish/fish_variables

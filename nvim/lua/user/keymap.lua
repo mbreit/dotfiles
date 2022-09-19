@@ -38,7 +38,7 @@ wk.register({
   },
   l = {
     name = "lang",
-    f = { vim.lsp.buf.formatting, "Format" },
+    f = { "<cmd>LspZeroFormat<cr>", "Format" },
     r = { vim.lsp.buf.rename, "Rename" },
     a = { vim.lsp.buf.code_action, "Code Action" },
     d = { vim.diagnostic.open_float, "Diagnostic" },

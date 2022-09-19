@@ -62,4 +62,8 @@ wk.register({
     s = { "<cmd>PackerSync<cr>", "Sync" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
+  c = {
+    name = "config",
+    i = { "<cmd>IndentBlanklineToggle<cr>", "Indent Guides" },
+  },
 }, { prefix = "<leader>" })

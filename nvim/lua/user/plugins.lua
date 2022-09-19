@@ -190,6 +190,7 @@ return require('packer').startup(function(use)
       vim.diagnostic.config({
         virtual_text = true
       })
+      vim.g.diagnostic_virtual_text = true
     end,
     after = { "lua-dev.nvim" }
   }

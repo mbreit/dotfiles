@@ -15,6 +15,12 @@ if not status_ok then
   return
 end
 
+local function toggle_diagnostics_virtual_text()
+  local new_value = not vim.g.diagnostic_virtual_text
+  vim.g.diagnostic_virtual_text = new_value
+  vim.diagnostic.config({ virtual_text = new_value })
+end
+
 wk.register({
   ["<space>"] = { "<cmd>Telescope find_files<cr>", "Find File" },
   ["?"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },

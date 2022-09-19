@@ -71,5 +71,6 @@ wk.register({
   c = {
     name = "config",
     i = { "<cmd>IndentBlanklineToggle<cr>", "Indent Guides" },
+    d = { toggle_diagnostics_virtual_text, "Inline Diagnostics" },
   },
 }, { prefix = "<leader>" })

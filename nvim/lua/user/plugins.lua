@@ -128,12 +128,11 @@ return require('packer').startup(function(use)
     'folke/lua-dev.nvim',
     config = function()
       require('lua-dev').setup({
-        -- lua-dev detects neovim config directory that does not work if symlinked from another directory
         override = function(root_dir, library)
-          -- if require("lua-dev.util").has_file(root_dir, "nvim") then
-          library.enabled = true
-          library.plugins = true
-          -- end
+          if require("lua-dev.util").has_file(root_dir, "nvim") then
+            library.enabled = true
+            library.plugins = true
+          end
         end,
       })
     end,

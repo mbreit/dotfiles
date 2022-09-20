@@ -1,6 +1,9 @@
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  -- TODO: Lua LSP server has warning about fn.glob and missing parameters,
+  -- but packer documents bootstrapping this way
+  ---@diagnostic disable-next-line: missing-parameter
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
@@ -21,12 +24,10 @@ return require('packer').startup(function(use)
     end,
     config = function()
       require("nvim-treesitter.configs").setup {
-        ensure_installed = { "lua", "ruby", "rust", "javascript", "typescript", "json", "json5", "yaml", "bash", "css",
-          "html", "scss", "vue" },
-
-        -- Install parsers synchronously (only applied to `ensure_installed`)
-        sync_install = false,
-
+        ensure_installed = {
+          "lua", "ruby", "rust", "javascript", "typescript", "json", "json5", "yaml", "bash", "css", "html", "scss",
+          "vue"
+        },
         highlight = {
           enable = true,
         },

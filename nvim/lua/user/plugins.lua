@@ -20,7 +20,23 @@ return require('packer').startup(function(use)
       require('nvim-treesitter.install').update({ with_sync = true })
     end,
     config = function()
-      require('user.treesitter')
+      require("nvim-treesitter.configs").setup {
+        ensure_installed = { "lua", "ruby", "rust", "javascript", "typescript", "json", "json5", "yaml", "bash", "css",
+          "html", "scss", "vue" },
+
+        -- Install parsers synchronously (only applied to `ensure_installed`)
+        sync_install = false,
+
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+        endwise = {
+          enable = true,
+        },
+      }
     end,
   }
 

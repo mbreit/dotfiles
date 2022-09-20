@@ -24,22 +24,18 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use {
-    "RRethy/nvim-treesitter-endwise",
-  }
+  use 'RRethy/nvim-treesitter-endwise'
 
-  use {
-    "RRethy/vim-illuminate",
-  }
+  use 'RRethy/vim-illuminate'
 
   use {
     'navarasu/onedark.nvim',
     config = function()
       require('onedark').load()
-    end
+    end,
   }
 
-  use { 'kyazdani42/nvim-web-devicons' }
+  use 'kyazdani42/nvim-web-devicons'
 
   use 'arkav/lualine-lsp-progress'
 
@@ -55,17 +51,17 @@ return require('packer').startup(function(use)
         },
         sections = {
           lualine_c = {
-            "filename",
-            "lsp_progress"
+            'filename',
+            'lsp_progress'
           }
         },
         extensions = {
-          "nvim-tree",
-          "quickfix",
-          "toggleterm"
+          'nvim-tree',
+          'quickfix',
+          'toggleterm'
         }
       }
-    end
+    end,
   }
 
   use {
@@ -73,12 +69,12 @@ return require('packer').startup(function(use)
     tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require("bufferline").setup {}
-    end
+      require('bufferline').setup {}
+    end,
   }
 
   use {
-    "lukas-reineke/indent-blankline.nvim",
+    'lukas-reineke/indent-blankline.nvim',
     config = function()
       require('indent_blankline').setup({
         show_trailing_blankline_indent = false,
@@ -91,51 +87,47 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'lewis6991/gitsigns.nvim', -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+    'lewis6991/gitsigns.nvim',
     config = function()
       require('gitsigns').setup()
-    end
+    end,
   }
 
   use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
+      require('trouble').setup()
+    end,
   }
 
   use {
-    "akinsho/toggleterm.nvim",
+    'akinsho/toggleterm.nvim',
     tag = '*',
     config = function()
-      require("toggleterm").setup()
-    end
+      require('toggleterm').setup()
+    end,
   }
 
   use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup()
+    end,
   }
 
   use({
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    'kylechui/nvim-surround',
+    tag = '*',
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
+      require('nvim-surround').setup()
+    end,
   })
 
   use({
-    "folke/lua-dev.nvim",
+    'folke/lua-dev.nvim',
     config = function()
-      require("lua-dev").setup({
+      require('lua-dev').setup({
         -- lua-dev detects neovim config directory that does not work if symlinked from another directory
         override = function(root_dir, library)
           -- if require("lua-dev.util").has_file(root_dir, "nvim") then
@@ -180,69 +172,62 @@ return require('packer').startup(function(use)
       })
       vim.g.diagnostic_virtual_text = true
     end,
-    after = { "lua-dev.nvim" }
+    after = { 'lua-dev.nvim' },
   }
 
   use {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
-    end
+    end,
   }
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { 'nvim-lua/plenary.nvim' },
   }
 
   use {
-    "benfowler/telescope-luasnip.nvim",
+    'benfowler/telescope-luasnip.nvim',
     -- module = "telescope._extensions.luasnip", -- if you wish to lazy-load
     config = function()
       require('telescope').load_extension('luasnip')
-    end
+    end,
   }
 
   use {
     'stevearc/dressing.nvim',
     config = function()
       require('dressing').setup()
-    end
+    end,
   }
 
   use {
     'rcarriga/nvim-notify',
     config = function()
-      vim.notify = require("notify")
-    end
+      vim.notify = require('notify')
+    end,
   }
 
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
+    requires = { 'kyazdani42/nvim-web-devicons' },
     tag = 'nightly', -- optional, updated every week. (see issue #1193)
     config = function()
-      require("nvim-tree").setup()
-    end
+      require('nvim-tree').setup()
+    end,
   }
 
   use {
     'TimUntersberger/neogit',
-    requires = 'nvim-lua/plenary.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
   }
 
   use {
-    "folke/which-key.nvim",
+    'folke/which-key.nvim',
     config = function()
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
+      require('which-key').setup()
+    end,
   }
 
   use {
@@ -254,27 +239,14 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- use {
-  --   "nvim-neorg/neorg",
-  --   -- tag = "latest",
-  --   ft = "norg",
-  --   after = "nvim-treesitter", -- You may want to specify Telescope here as well
-  --   config = function()
-  --     require('neorg').setup {
-  --       load = {
-  --         ["core.defaults"] = {}
-  --       }
-  --     }
-  --   end
-  -- }
-
   use {
     'nvim-orgmode/orgmode',
     config = function()
-      require('orgmode').setup {}
+      require('orgmode').setup()
       require('orgmode').setup_ts_grammar()
     end
   }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

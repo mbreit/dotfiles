@@ -146,6 +146,10 @@ return require('packer').startup(function(use)
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
 
+      -- null_ls
+      { 'jose-elias-alvarez/null-ls.nvim' },
+      { 'jayp0521/mason-null-ls.nvim' },
+
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-buffer' },
@@ -170,6 +174,29 @@ return require('packer').startup(function(use)
         virtual_text = true
       })
       vim.g.diagnostic_virtual_text = true
+
+      -- null_ls integration, see https://github.com/VonHeikemen/lsp-zero.nvim/issues/46
+      require('null-ls').setup()
+
+      local null_ls = require('null-ls')
+      local null_opts = lsp.build_options('null-ls', {})
+
+      require('mason-null-ls').setup()
+      require('mason-null-ls').setup_handlers({
+        -- TODO: mason-null-ls should be able to auto register all installed sources
+        markdownlint = function()
+          null_ls.register(null_ls.builtins.formatting.markdownlint)
+          null_ls.register(null_ls.builtins.diagnostics.markdownlint.with({
+            diagnostics_postprocess = function(diagnostic)
+              diagnostic.severity = vim.diagnostic.severity.INFO
+            end,
+          }))
+        end
+      })
+
+      null_ls.setup({
+        on_attach = null_opts.on_attach,
+      })
     end,
     after = { 'lua-dev.nvim' },
   }

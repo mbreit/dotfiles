@@ -1,4 +1,5 @@
 vim.opt.backup = false                          -- creates a backup file
+vim.opt.confirm = true                          -- ask to write unsaved buffers on exit
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp

@@ -1,4 +1,4 @@
- -- Shorten function name
+-- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
@@ -59,6 +59,15 @@ wk.register({
     name = "git",
     g = { "<cmd>Neogit<cr>", "Neogit" },
     b = { "<cmd>Telescope git_branches<cr>", "Branches" },
+  },
+  r = {
+    name = "run",
+    r = { "<cmd>OverseerRun<cr>", "Run Task" },
+    c = { "<cmd>OverseerRunCmd<cr>", "Run CMD" },
+    s = { "<cmd>OverseerQuickAction open hsplit<cr>", "Open Runnin Task (Split)" },
+    f = { "<cmd>OverseerQuickAction open float<cr>", "Open Runnin Task (Float)" },
+    o = { "<cmd>OverseerOpen<cr>", "Show Tasks" },
+    q = { "<cmd>OverseerQuickAction<cr>", "Quick Action" },
   },
   t = {
     name = "terminal",

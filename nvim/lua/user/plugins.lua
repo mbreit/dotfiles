@@ -92,8 +92,9 @@ return require('packer').startup(function(use)
         sections = {
           lualine_c = {
             'filename',
-            'lsp_progress'
-          }
+            'lsp_progress',
+            'overseer'
+          },
         },
         extensions = {
           'nvim-tree',
@@ -293,6 +294,13 @@ return require('packer').startup(function(use)
     'folke/which-key.nvim',
     config = function()
       require('which-key').setup()
+    end,
+  }
+
+  use {
+    'stevearc/overseer.nvim',
+    config = function()
+      require('overseer').setup()
     end,
   }
 

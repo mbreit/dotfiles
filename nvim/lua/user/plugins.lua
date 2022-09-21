@@ -18,6 +18,29 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      local alpha = require 'alpha'
+      local dashboard = require 'alpha.themes.dashboard'
+      dashboard.section.buttons.val = {
+        dashboard.button("n", "  New file", "<cmd>ene <cr>"),
+        dashboard.button("e", "  Explore", "<cmd>NvimTreeFocus<cr>"),
+        dashboard.button("f", "  Find file", "<cmd>Telescope find_files<cr>"),
+        dashboard.button("r", "  Recently opened files", "<cmd>Telescope oldfiles<cr>"),
+        dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
+
+        -- dashboard.button("SPC f h", "  Recently opened files"),
+        -- dashboard.button("SPC f r", "  Frecency/MRU"),
+        -- dashboard.button("SPC f g", "  Find word"),
+        -- dashboard.button("SPC f m", "  Jump to bookmarks"),
+        -- dashboard.button("SPC s l", "  Open last session"),
+      }
+      alpha.setup(dashboard.config)
+    end
+  }
+
+  use {
     'nvim-treesitter/nvim-treesitter',
     run = function()
       require('nvim-treesitter.install').update({ with_sync = true })

@@ -1,4 +1,4 @@
--- Shorten function name
+ -- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
@@ -27,6 +27,7 @@ wk.register({
   ["/"] = { "<cmd>Telescope live_grep<cr>", "Search" },
   [":"] = { "<cmd>Telescope buildin<cr>", "Telescope" },
   e = { "<cmd>NvimTreeFocus<cr>", "Tree" },
+  q = { ":qa<cr>", "Quit" },
   f = {
     name = "file", -- optional group name
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
@@ -72,5 +73,6 @@ wk.register({
     name = "config",
     i = { "<cmd>IndentBlanklineToggle<cr>", "Indent Guides" },
     d = { toggle_diagnostics_virtual_text, "Inline Diagnostics" },
+    o = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
   },
 }, { prefix = "<leader>" })

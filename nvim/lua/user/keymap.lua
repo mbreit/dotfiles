@@ -69,6 +69,11 @@ wk.register({
     o = { "<cmd>OverseerOpen<cr>", "Show Tasks" },
     q = { "<cmd>OverseerQuickAction<cr>", "Quick Action" },
   },
+  s = {
+    name = "specs",
+    l = { function() require('neotest').run.run() end, "Run nearest test" },
+    f = { function() require('neotest').run.run(vim.fn.expand('%')) end, "Run test file" }
+  },
   t = {
     name = "terminal",
     t = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },

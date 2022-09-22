@@ -305,6 +305,25 @@ return require('packer').startup(function(use)
   }
 
   use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      'olimorris/neotest-rspec',
+      'marilari88/neotest-vitest',
+    },
+    config = function()
+      require('neotest').setup({
+        adapters = {
+          require('neotest-rspec'),
+          require('neotest-vitest'),
+        }
+      })
+    end
+  }
+
+  use {
     'saecki/crates.nvim',
     tag = 'v0.2.1',
     requires = { 'nvim-lua/plenary.nvim' },

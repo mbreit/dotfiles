@@ -72,7 +72,8 @@ wk.register({
   s = {
     name = "specs",
     l = { function() require('neotest').run.run() end, "Run nearest test" },
-    f = { function() require('neotest').run.run(vim.fn.expand('%')) end, "Run test file" }
+    f = { function() require('neotest').run.run(vim.fn.expand('%')) end, "Run test file" },
+    r = { function() require('neotest').run.run_last() end, "Run last test" },
   },
   t = {
     name = "terminal",

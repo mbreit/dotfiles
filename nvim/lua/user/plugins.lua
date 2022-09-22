@@ -318,7 +318,10 @@ return require('packer').startup(function(use)
         adapters = {
           require('neotest-rspec'),
           require('neotest-vitest'),
-        }
+        },
+        consumers = {
+          overseer = require("neotest.consumers.overseer"),
+        },
       })
     end
   }

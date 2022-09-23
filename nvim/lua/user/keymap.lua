@@ -36,6 +36,7 @@ wk.register({
   b = {
     name = "buffers",
     b = { "<cmd>Telescope buffers<cr>", "Switch" },
+    d = { "<cmd>Bdelete<cr>", "Delete" },
   },
   l = {
     name = "lang",

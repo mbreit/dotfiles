@@ -67,7 +67,7 @@ wk.register({
     s = { "<cmd>OverseerQuickAction open hsplit<cr>", "Open Runnin Task (Split)" },
     f = { "<cmd>OverseerQuickAction open float<cr>", "Open Runnin Task (Float)" },
     o = { "<cmd>OverseerOpen<cr>", "Show Tasks" },
-    t = { "<cmd>OverseerTaskAction<cr>", "Quick Action" },
+    t = { "<cmd>OverseerTaskAction<cr>", "Task Action" },
     q = { "<cmd>OverseerQuickAction<cr>", "Quick Action" },
   },
   s = {

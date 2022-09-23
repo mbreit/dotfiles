@@ -156,13 +156,21 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use({
+  use {
     'kylechui/nvim-surround',
     tag = '*',
     config = function()
       require('nvim-surround').setup()
     end,
-  })
+  }
+
+  use {
+    'NvChad/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end
+
+  }
 
   use({
     'folke/lua-dev.nvim',

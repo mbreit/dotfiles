@@ -77,8 +77,6 @@ return require('packer').startup(function(use)
 
   use 'kyazdani42/nvim-web-devicons'
 
-  use 'arkav/lualine-lsp-progress'
-
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -92,7 +90,6 @@ return require('packer').startup(function(use)
         sections = {
           lualine_c = {
             'filename',
-            'lsp_progress',
             'overseer'
           },
         },
@@ -240,6 +237,13 @@ return require('packer').startup(function(use)
       })
     end,
     after = { 'lua-dev.nvim' },
+  }
+
+  use {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end,
   }
 
   use {

@@ -389,7 +389,7 @@ return require('packer').startup(function(use)
   }
 
   use { 'jakewvincent/mkdnflow.nvim',
-    rocks = 'luautf8',
+    -- rocks = 'luautf8',
     config = function()
       require('mkdnflow').setup({
         -- Config goes here; leave blank for defaults

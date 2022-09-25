@@ -167,7 +167,7 @@ return require('packer').startup(function(use)
   use {
     'NvChad/nvim-colorizer.lua',
     config = function()
-      require('colorizer').setup()
+      require('colorizer').setup({})
     end
 
   }
@@ -363,6 +363,13 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'AckslD/nvim-FeMaco.lua',
+    config = function()
+      require("femaco").setup()
+    end
+  }
+
+  use {
     'saecki/crates.nvim',
     tag = 'v0.2.1',
     requires = { 'nvim-lua/plenary.nvim' },
@@ -376,6 +383,18 @@ return require('packer').startup(function(use)
     config = function()
       require('orgmode').setup()
       require('orgmode').setup_ts_grammar()
+    end
+  }
+
+  use { 'jakewvincent/mkdnflow.nvim',
+    rocks = 'luautf8',
+    config = function()
+      require('mkdnflow').setup({
+        -- Config goes here; leave blank for defaults
+        mappings = {
+          MkdnEnter = { { 'i', 'n', 'v' }, '<CR>' },
+        },
+      })
     end
   }
 

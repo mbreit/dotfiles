@@ -80,8 +80,16 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   use {
+    'stevearc/overseer.nvim',
+    config = function()
+      require('overseer').setup()
+    end,
+  }
+
+  use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    after = 'overseer.nvim',
     config = function()
       require('lualine').setup {
         options = {
@@ -334,13 +342,6 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'stevearc/overseer.nvim',
-    config = function()
-      require('overseer').setup()
-    end,
-  }
-
-  use {
     "nvim-neotest/neotest",
     requires = {
       "nvim-lua/plenary.nvim",
@@ -349,6 +350,7 @@ return require('packer').startup(function(use)
       'olimorris/neotest-rspec',
       'marilari88/neotest-vitest',
     },
+    after = 'overseer.nvim',
     config = function()
       require('neotest').setup({
         adapters = {

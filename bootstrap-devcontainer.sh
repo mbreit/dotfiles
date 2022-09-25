@@ -9,7 +9,7 @@ sudo chown -R $(id -u):$(id -g) ~/.local ~/.config
 
 # Install debian packages
 sudo apt-get update
-sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish wget stow
+sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish wget stow ca-certificates git build-essential curl fzf
 
 wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb
 sudo dpkg -i nvim-linux64.deb

@@ -19,6 +19,8 @@ return require('packer').startup(function(use)
 
   use 'famiu/bufdelete.nvim'
 
+  use 'kyazdani42/nvim-web-devicons'
+
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
@@ -49,10 +51,10 @@ return require('packer').startup(function(use)
     end,
     config = function()
       require("nvim-treesitter.configs").setup {
-        ensure_installed = {
-          "lua", "ruby", "rust", "javascript", "typescript", "json", "json5", "yaml", "bash", "css", "html", "scss",
-          "vue"
-        },
+        -- ensure_installed = {
+        --   "lua", "ruby", "rust", "javascript", "typescript", "json", "json5", "yaml", "bash", "css", "html", "scss",
+        --   "vue"
+        -- },
         highlight = {
           enable = true,
         },
@@ -66,9 +68,15 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use 'RRethy/nvim-treesitter-endwise'
+  use {
+    'RRethy/nvim-treesitter-endwise',
+    after = "nvim-treesitter",
+  }
 
-  use 'RRethy/vim-illuminate'
+  use {
+    'RRethy/vim-illuminate',
+    after = "nvim-treesitter",
+  }
 
   use {
     'navarasu/onedark.nvim',
@@ -76,8 +84,6 @@ return require('packer').startup(function(use)
       require('onedark').load()
     end,
   }
-
-  use 'kyazdani42/nvim-web-devicons'
 
   use {
     'stevearc/overseer.nvim',
@@ -177,7 +183,6 @@ return require('packer').startup(function(use)
     config = function()
       require('colorizer').setup({})
     end
-
   }
 
   use({
@@ -301,6 +306,7 @@ return require('packer').startup(function(use)
   use {
     'benfowler/telescope-luasnip.nvim',
     -- module = "telescope._extensions.luasnip", -- if you wish to lazy-load
+    after = 'telescope.nvim',
     config = function()
       require('telescope').load_extension('luasnip')
     end,
@@ -338,6 +344,7 @@ return require('packer').startup(function(use)
     'folke/which-key.nvim',
     config = function()
       require('which-key').setup()
+      require('user.which-key')
     end,
   }
 
@@ -349,6 +356,7 @@ return require('packer').startup(function(use)
       "antoinemadec/FixCursorHold.nvim",
       'olimorris/neotest-rspec',
       'marilari88/neotest-vitest',
+      'stevearc/overseer.nvim',
     },
     after = 'overseer.nvim',
     config = function()
@@ -378,14 +386,6 @@ return require('packer').startup(function(use)
     config = function()
       require('crates').setup()
     end,
-  }
-
-  use {
-    'nvim-orgmode/orgmode',
-    config = function()
-      require('orgmode').setup()
-      require('orgmode').setup_ts_grammar()
-    end
   }
 
   use { 'jakewvincent/mkdnflow.nvim',

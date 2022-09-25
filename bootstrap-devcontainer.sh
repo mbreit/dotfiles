@@ -11,7 +11,7 @@ sudo chown -R $(id -u):$(id -g) ~/.local ~/.config
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish wget stow ca-certificates git build-essential curl fzf tmux
 
-if [ ! -f /usr/bin/fish ]                                                                                                                                                                   
+if [ ! -f /usr/bin/nvim ]                                                                                                                                                                   
 then    
   TEMP_FILE=$(mktemp)    
   curl -Lo "$TEMP_FILE" https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb    

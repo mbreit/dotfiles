@@ -5,7 +5,7 @@
 
 mkdir -p ~/.local ~/.config
 # Fix ownership for ~/.local or ~/.config in case it is a docker volume
-sudo chown -R $(id -u):$(id -g) ~/.local ~/.config
+sudo chown -R $(id -u):$(id -g) ~/.local ~/.config ~/.cache
 
 # Install debian packages
 sudo apt-get update

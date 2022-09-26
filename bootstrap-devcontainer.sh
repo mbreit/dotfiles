@@ -3,7 +3,7 @@
 # Bootstrap a devcontainer environment
 # Only supports debian/ubuntu for now and expects passwordless sudo
 
-mkdir -p ~/.local ~/.config
+mkdir -p ~/.local ~/.config ~/.cache
 # Fix ownership for ~/.local or ~/.config in case it is a docker volume
 sudo chown -R $(id -u):$(id -g) ~/.local ~/.config ~/.cache
 

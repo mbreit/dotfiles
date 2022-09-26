@@ -221,11 +221,38 @@ return require('packer').startup(function(use)
       lsp.set_preferences({
         suggest_lsp_servers = false,
       })
+      lsp.configure('eslint', {
+        settings = {
+          eslint = {
+            packageManager = 'yarn',
+            format = {
+              enable = true
+            },
+          },
+        },
+        on_attach = function(client, bufnr)
+          -- Enable formatting for eslintls
+          client.resolved_capabilities.document_formatting = true
+        end
+      })
+      lsp.configure('tsserver', {
+        settings = {
+          javascript = {
+            format = {
+              enable = false
+            },
+          },
+        },
+        on_attach = function(client, bufnr)
+          client.resolved_capabilities.document_formatting = false
+        end
+      })
       lsp.setup()
       vim.diagnostic.config({
         virtual_text = true
       })
       vim.g.diagnostic_virtual_text = true
+
 
       -- null_ls integration, see https://github.com/VonHeikemen/lsp-zero.nvim/issues/46
       require('null-ls').setup()

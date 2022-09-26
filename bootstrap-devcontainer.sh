@@ -23,10 +23,7 @@ fi
 sudo chsh -s /usr/bin/fish $(whoami)
 
 # Install dotfiles
-stow fish nvim tmux
+./install.sh
 
 ./bootstrap-nvim.sh
-
-# Run fundle install twice, plugins are installed in second call
-fish -ic "fundle install"
-fish -ic "fundle install"
+./bootstrap-fish.sh

@@ -9,7 +9,6 @@ if status --is-interactive || test -n "$FISH_FUNDLE_INSTALL"
     fundle plugin 'jethrokuan/z'
     fundle plugin 'franciscolourenco/done'
     fundle plugin 'laughedelic/pisces'
-    fundle plugin 'oh-my-fish/plugin-bang-bang'
 
     fundle init
 end

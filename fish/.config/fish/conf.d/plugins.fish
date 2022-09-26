@@ -1,4 +1,4 @@
-if status --is-interactive
+if status --is-interactive || test -n "$FISH_FUNDLE_INSTALL"
     if not functions -q fundle
         eval (curl -sfL https://git.io/fundle-install)
     end

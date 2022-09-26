@@ -42,10 +42,10 @@ return require('packer').startup(function(use)
     end,
     config = function()
       require("nvim-treesitter.configs").setup {
-        -- ensure_installed = {
-        --   "lua", "ruby", "rust", "javascript", "typescript", "json", "json5", "yaml", "bash", "css", "html", "scss",
-        --   "vue"
-        -- },
+        ensure_installed = {
+          "lua", "ruby", "rust", "javascript", "typescript", "json", "yaml", "bash", "css", "html", "scss", "vue",
+        },
+        sync_install = true,
         highlight = {
           enable = true,
         },

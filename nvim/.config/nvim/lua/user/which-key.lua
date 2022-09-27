@@ -75,4 +75,13 @@ require('which-key').register({
     d = { toggle_diagnostics_virtual_text, "Inline Diagnostics" },
     o = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
   },
+  n = {
+    name = "notes",
+    n = { "<cmd>Telekasten new_note<cr>", "New Note" },
+    t = { "<cmd>Telekasten goto_today<cr>", "Today" },
+    d = { "<cmd>Telekasten find_daily_notes<cr>", "Find Daily Notes" },
+    f = { "<cmd>Telekasten find_notes<cr>", "Find Notes" },
+    ['/'] = { "<cmd>Telekasten search_notes<cr>", "Find Notes" },
+    p = { "<cmd>Telekasten panel<cr>", "Telekasten Panel" },
+  },
 }, { prefix = "<leader>" })

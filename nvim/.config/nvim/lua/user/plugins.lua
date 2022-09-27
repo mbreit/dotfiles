@@ -418,6 +418,18 @@ return require('packer').startup(function(use)
     end
   }
 
+  use {
+    'renerocksai/telekasten.nvim',
+    config = function()
+      require('telekasten').setup({
+        home = vim.fn.expand('~/Cloud/Notes/'),
+        -- if true, telekasten will be enabled when opening a note within the configured home
+        take_over_my_home = true,
+        command_palette_theme = 'dropdown',
+      })
+    end
+  }
+
   -- Put this at the end after all plugins
   -- This breaks headless bootstraping
   -- if packer_bootstrap then

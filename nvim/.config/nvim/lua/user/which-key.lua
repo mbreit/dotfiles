@@ -13,7 +13,7 @@ require('which-key').register({
   q = { ":qa<cr>", "Quit" },
   f = {
     name = "file", -- optional group name
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
+    f = { '<cmd>Telescope file_browser path=%:p:h<cr>', "File Browser" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
   },
   b = {

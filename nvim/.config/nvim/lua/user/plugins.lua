@@ -307,6 +307,9 @@ return require('packer').startup(function(use)
             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
           },
+          file_browser = {
+            hidden = true,
+          },
         },
       }
     end
@@ -327,6 +330,14 @@ return require('packer').startup(function(use)
     after = 'telescope.nvim',
     config = function()
       require('telescope').load_extension('luasnip')
+    end,
+  }
+
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    after = 'telescope.nvim',
+    config = function()
+      require('telescope').load_extension('file_browser')
     end,
   }
 

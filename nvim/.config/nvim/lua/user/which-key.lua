@@ -63,6 +63,10 @@ require('which-key').register({
   t = {
     name = "terminal",
     t = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },
+    h = { "<cmd>:tabnew | terminal htop<cr>", "htop" },
+    b = { "<cmd>:tabnew | terminal btop<cr>", "btop" },
+    g = { "<cmd>:tabnew | terminal lazygit<cr>", "lazygit" },
+    d = { "<cmd>:tabnew | terminal lazydocker<cr>", "lazydocker" },
   },
   p = {
     name = "packer",

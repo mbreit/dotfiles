@@ -24,6 +24,3 @@ sudo chsh -s /usr/bin/fish $(whoami)
 
 # Install dotfiles
 ./install.sh
-
-./bootstrap-nvim.sh
-./bootstrap-fish.sh

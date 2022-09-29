@@ -12,14 +12,19 @@ require('which-key').register({
   e = { "<cmd>NvimTreeFocus<cr>", "Tree" },
   q = { ":qa<cr>", "Quit" },
   f = {
-    name = "file", -- optional group name
+    name = "file",
     f = { '<cmd>Telescope file_browser path=%:p:h<cr>', "File Browser" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    g = { '<cmd>Telescope git_files<cr>', "Open Git Files"},
   },
   b = {
     name = "buffers",
     b = { "<cmd>Telescope buffers<cr>", "Switch" },
     d = { "<cmd>Bdelete<cr>", "Delete" },
+  },
+  h = {
+    name = "help",
+    h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
   },
   l = {
     name = "lang",

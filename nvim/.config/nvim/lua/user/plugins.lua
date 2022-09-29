@@ -367,6 +367,11 @@ return require('packer').startup(function(use)
   use {
     'TimUntersberger/neogit',
     requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('neogit').setup({
+        disable_commit_confirmation = true,
+      })
+    end,
   }
 
   use {

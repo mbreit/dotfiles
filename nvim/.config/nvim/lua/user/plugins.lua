@@ -299,6 +299,17 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('telescope').setup {
+        pickers = {
+          find_files = {
+            theme = "ivy",
+          },
+          oldfiles = {
+            theme = "ivy",
+          },
+          live_grep = {
+            theme = "ivy",
+          }
+        },
         extensions = {
           fzf = {
             fuzzy = true, -- false will only do exact matching
@@ -308,6 +319,7 @@ return require('packer').startup(function(use)
             -- the default case_mode is "smart_case"
           },
           file_browser = {
+            theme = "ivy",
             hidden = true,
           },
         },

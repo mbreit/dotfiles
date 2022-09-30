@@ -9,7 +9,7 @@ sudo chown -R $(id -u):$(id -g) ~/.local ~/.config ~/.cache
 
 # Install debian packages
 sudo apt-get update
-sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish wget stow ca-certificates git build-essential curl fzf tmux
+sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish wget stow ca-certificates git build-essential curl fzf tmux ripgrep
 
 if [ ! -f /usr/bin/nvim ]                                                                                                                                                                   
 then    

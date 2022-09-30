@@ -3,5 +3,6 @@
 stow fish git nvim tmux
 
 ./bootstrap-nvim.sh
-# ./bootstrap-fish.fish
-fish --debug='complete,*history*' --debug-output=/tmp/fish.log --init-command='set fish_trace on' ./bootstrap-fish.fish < /dev/null
+# Replace stdin with /dev/null to fix blocking `isatty` call in fish when used
+# in VSCode devcontainer
+./bootstrap-fish.fish < /dev/null

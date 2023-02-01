@@ -43,3 +43,5 @@
 	fontdiff = -family \"ubuntu mono\" -size -12 -weight normal -slant roman -underline 0 -overstrike 0
 [push]
 	default = current
+[init]
+	defaultBranch = main

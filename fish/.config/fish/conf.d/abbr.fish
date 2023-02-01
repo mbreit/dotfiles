@@ -23,4 +23,5 @@ if status --is-interactive
     abbr -a -g -- rc 'bin/rails console'
     abbr -a -g -- rdbm 'bin/rails db:migrate'
     abbr -a -g -- rs 'bin/rails server'
+    abbr -a -g -- t 'tmux new-session -At (basename (pwd))'
 end

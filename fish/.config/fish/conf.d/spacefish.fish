@@ -1,5 +1,5 @@
 if status --is-interactive
-    set SPACEFISH_PROMPT_ORDER time user dir host git ruby rust exec_time line_sep vi_mode jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host kubecontext git ruby rust exec_time line_sep vi_mode jobs exit_code char
 
     set SPACEFISH_PROMPT_FIRST_PREFIX_SHOW true
     set SPACEFISH_VI_MODE_PREFIX ""

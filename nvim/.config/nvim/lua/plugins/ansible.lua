@@ -1,0 +1,5 @@
+return {
+  {
+    "pearofducks/ansible-vim",
+  },
+}

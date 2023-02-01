@@ -1,5 +1,1 @@
-require "user.options"
-require "user.plugins"
-require "user.keymap"
-require "user.terminal"
-require "user.ansible"
+require("config.lazy")

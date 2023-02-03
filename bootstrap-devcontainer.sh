@@ -16,7 +16,7 @@ sudo apt-get install -y --no-install-recommends procps htop openssh-client less 
 
 if ! command -v npm >/dev/null 2>&1
 then
-  sudo apt-get install npm
+  sudo apt-get install -y --no-install-recommends npm
 fi
 
 if [ ! -f /usr/bin/nvim ]

@@ -12,7 +12,12 @@ sudo chown -R $(id -u):$(id -g) ~/.local ~/.config ~/.cache
 
 # Install debian packages
 sudo apt-get update
-sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish wget stow ca-certificates git build-essential curl fzf tmux ripgrep
+sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish wget stow ca-certificates git build-essential curl fzf tmux ripgrep unzip
+
+if ! command -v npm >/dev/null 2>&1
+then
+  sudo apt-get install npm
+fi
 
 if [ ! -f /usr/bin/nvim ]
 then

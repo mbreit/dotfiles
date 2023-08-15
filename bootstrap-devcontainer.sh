@@ -3,8 +3,8 @@
 # Bootstrap a devcontainer environment
 # Only supports debian/ubuntu for now and expects passwordless sudo
 
-# NEOVIM_VERSION=v0.8.0
-NEOVIM_VERSION=nightly
+NEOVIM_VERSION=v0.8.3
+# NEOVIM_VERSION=nightly
 
 mkdir -p ~/.local ~/.config ~/.cache
 # Fix ownership for ~/.local or ~/.config in case it is a docker volume

@@ -1,4 +1,4 @@
-FROM debian AS base
+FROM debian:bookworm AS base
 
 RUN groupadd app && useradd -g app -m app
 

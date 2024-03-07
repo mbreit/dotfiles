@@ -3,7 +3,7 @@
 # Bootstrap a devcontainer environment
 # Only supports debian/ubuntu for now and expects passwordless sudo
 
-NEOVIM_VERSION=v0.8.3
+NEOVIM_VERSION=v0.9.5
 # NEOVIM_VERSION=nightly
 
 mkdir -p ~/.local ~/.config ~/.cache
@@ -22,8 +22,10 @@ fi
 if [ ! -f /usr/bin/nvim ]
 then
   TEMP_FILE=$(mktemp)
-  curl -Lo "$TEMP_FILE" https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim-linux64.deb
-  sudo dpkg -i "$TEMP_FILE"
+  curl -Lo "$TEMP_FILE" https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim-linux64.tar.gz
+  cd /opt
+  sudo tar -xvzf "$TEMP_FILE"
+  sudo ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/
   rm "$TEMP_FILE"
   sudo sh -c "echo /usr/bin/fish >> /etc/shells"
 fi

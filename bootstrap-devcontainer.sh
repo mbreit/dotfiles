@@ -19,12 +19,11 @@ then
   sudo apt-get install -y --no-install-recommends npm
 fi
 
-if [ ! -f /usr/bin/nvim ]
+if [ ! -f /usr/bin/nvim ] && [ ! -f /usr/local/bin/nvim ]
 then
   TEMP_FILE=$(mktemp)
   curl -Lo "$TEMP_FILE" https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim-linux64.tar.gz
-  cd /opt
-  sudo tar -xvzf "$TEMP_FILE"
+  sudo tar -xzf "$TEMP_FILE" -C /opt
   sudo ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/
   rm "$TEMP_FILE"
   sudo sh -c "echo /usr/bin/fish >> /etc/shells"

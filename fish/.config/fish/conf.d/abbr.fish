@@ -24,4 +24,5 @@ if status --is-interactive
     abbr -a -g -- rdbm 'bin/rails db:migrate'
     abbr -a -g -- rs 'bin/rails server'
     abbr -a -g -- t 'tmux new-session -At (basename (pwd))'
+    abbr -a -g -- ti 'trivy image --ignore-unfixed --scanners vuln'
 end

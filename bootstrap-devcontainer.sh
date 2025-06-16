@@ -14,6 +14,9 @@ sudo chown -R $(id -u):$(id -g) ~/.local ~/.config ~/.cache
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends procps htop openssh-client less fish wget stow ca-certificates git build-essential curl fzf tmux ripgrep unzip
 
+# Install uv for fast Python tool installation (e.g. MCP tools)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 if ! command -v npm >/dev/null 2>&1
 then
   sudo apt-get install -y --no-install-recommends npm

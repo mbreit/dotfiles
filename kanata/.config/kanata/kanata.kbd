@@ -1,0 +1,67 @@
+;; Portable Kanata translation of gmmk_pro_ansi_mbreit.json.
+;; Intended for a laptop or any ANSI keyboard.
+;;
+;; Caps Lock:
+;;   tap       -> Escape
+;;   hold/chord -> navigation layer
+;;
+;; tap-hold-press makes the hold action activate immediately when another key
+;; is pressed, which is useful for Caps+K-style chords. Adjust both 200 values
+;; if the tap/hold threshold feels too short or long.
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc)
+
+(defalias
+  caps-nav (tap-hold-press 200 200 esc (layer-while-held navigation))
+)
+
+(deflayermap (base)
+  caps @caps-nav
+)
+
+(deflayermap (navigation)
+  ;; Number row -> F1-F12, matching QMK layer 2.
+  grv grv
+  1 f1
+  2 f2
+  3 f3
+  4 f4
+  5 f5
+  6 f6
+  7 f7
+  8 f8
+  9 f9
+  0 f10
+  min f11
+  eql f12
+
+  ;; Navigation cluster.
+  u pgup
+  i up
+  o pgdn
+  p prtsc
+  lbrc slck
+  rbrc pause
+
+  j left
+  k down
+  l rght
+  scln ins
+  apos del
+
+  n home
+  m end
+  comm mute
+  . vold
+  / volu
+
+  ;; Arrow cluster alternatives from QMK layer 2.
+  up pgup
+  left home
+  down pgdn
+  rght end
+)

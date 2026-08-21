@@ -4,5 +4,7 @@
 # in VSCode devcontainer
 stow fish && ./bootstrap-fish.fish </dev/null
 stow git
+stow kanata
+stow kanata-tray
 stow nvim && ./bootstrap-nvim.sh
 stow tmux
